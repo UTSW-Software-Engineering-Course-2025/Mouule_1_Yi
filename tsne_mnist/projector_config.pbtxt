@@ -1,0 +1,5 @@
+embeddings {
+  tensor_name: "MNIST-tsne:00000"
+  metadata_path: "00000/MNIST-tsne/metadata.tsv"
+  tensor_path: "00000/MNIST-tsne/tensors.tsv"
+}
