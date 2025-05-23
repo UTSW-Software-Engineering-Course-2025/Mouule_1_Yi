@@ -15,6 +15,37 @@ def save_metadata_tsv(labels, filepath="runs/tsne_mnist/metadata.tsv"):
         for label in labels:
             f.write(f"{label}\n")
 
+def plot_tsne_scatter_3d(Y, labels, elev=20, azim=120):
+    """
+    3-D t-SNE scatter plot.
+
+    Args:
+        Y: ndarray/Tensor, shape (N, 3)
+        labels: ndarray/Tensor, shape (N,)
+        elev, azim: initial view
+    Returns:
+        fig: matplotlib.figure.Figure
+    """
+    if torch.is_tensor(Y): Y = Y.cpu().detach().numpy()
+    if torch.is_tensor(labels): labels = labels.cpu().detach().numpy()
+
+    fig = plt.figure(figsize=(9, 7))
+    ax = fig.add_subplot(111, projection='3d')
+    sc = ax.scatter(Y[:, 0], Y[:, 1], Y[:, 2],
+                    c=labels, cmap='tab10', s=8, alpha=0.65)
+
+    # construct legend (same as 2-D version)
+    handles = [plt.Line2D([], [], marker='o', linestyle='',
+                          label=str(i), color=plt.cm.tab10(i/10), markersize=6)
+               for i in np.unique(labels)]
+    ax.legend(handles=handles, title="Digit Label",
+              bbox_to_anchor=(1.05, 1), loc='upper left')
+    ax.view_init(elev=elev, azim=azim)
+    ax.set_title("3-D t-SNE on MNIST")
+    ax.set_axis_off()          # remove axis ticks
+    plt.tight_layout()
+    return fig
+
 def plot_tsne_scatter(Y, labels):
     """
     Plot a 2D scatter plot for t-SNE embeddings.
@@ -233,9 +264,14 @@ def tsne(X,labels, n_components=2, perplexity=30.0, tol=1e-5, learning_rate=2.0,
             print(f"Iteration {i}, Loss: {loss.item()}")
             writer.add_scalar("KL Divergence", loss.item(), i)
     if labels is not None:
-        writer.add_embedding(Y.detach().cpu(), metadata=labels, tag="MNIST-tsne")
-        fig = plot_tsne_scatter(Y.detach().cpu(), labels)
-        writer.add_figure("t-SNE Scatter", fig, global_step=i)
+        writer.add_embedding(Y.detach().cpu(),metadata=labels,tag=f"MNIST-tsne-{n_components}D")
+        if n_components == 2:
+            fig = plot_tsne_scatter(Y.detach().cpu(), labels)
+        elif n_components == 3:
+            fig = plot_tsne_scatter_3d(Y.detach().cpu(), labels)
+        else:
+            raise ValueError("Only 2-D or 3-D visualisation supported here.")
+        writer.add_figure(f"t-SNE Scatter {n_components}D", fig,global_step=n_iter)
     writer.close()
     return Y.detach().cpu().numpy()
 
@@ -249,7 +285,7 @@ if __name__ == "__main__":
     X_tensor = X_raw
     # Run t-SNE
     save_metadata_tsv(labels)
-    tsne(X_tensor, labels)
+    tsne(X_tensor, labels,n_components=3)
     print("t-SNE done")
 
         
