@@ -7,7 +7,6 @@
 import pandas as pd
 import numpy as np
 from matplotlib import pyplot as plt
-get_ipython().run_line_magic('matplotlib', 'inline')
 data = pd.read_csv('./hochgerner_2018.data.gz',sep='\t',index_col=0)
 anno = pd.read_csv('./hochgerner_2018.anno',sep='\t',header=None)
 anno = anno[1].values
