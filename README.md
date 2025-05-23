@@ -9,13 +9,6 @@ Both methods are applied to high-dimensional data like MNIST or single-cell data
 
 ---
 
-## Project Structure
-
-├── GraphDR/       # Graph-based smoothing + PCA (GraphDR)
- ├── tsne/          # Manual PyTorch implementation of t-SNE
- ├── .git/          # Git versioning
- └── README.md      # Project overview (this file)
-
 ## Submodules Overview
 
 | Module    | Description                                                  | Link                                     |
