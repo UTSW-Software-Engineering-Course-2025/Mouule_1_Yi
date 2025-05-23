@@ -14,10 +14,14 @@ def save_metadata_tsv(labels, filepath="runs/tsne_mnist/metadata.tsv"):
     with open(filepath, "w") as f:
         for label in labels:
             f.write(f"{label}\n")
+
 def plot_tsne_scatter(Y, labels):
     """
-    Y: ndarray or Tensor of shape (N, 2)
-    labels: Tensor or ndarray of shape (N,)
+    Plot a 2D scatter plot for t-SNE embeddings.
+
+    Args:
+        Y: ndarray or Tensor of shape (N, 2) - 2D embeddings
+        labels: ndarray or Tensor of shape (N,) - class labels
     """
     if torch.is_tensor(Y): Y = Y.cpu().detach().numpy()
     if torch.is_tensor(labels): labels = labels.cpu().detach().numpy()
@@ -130,18 +134,30 @@ def adjustbeta(X, D,tol, perplexity):
 
 
 def pairwise_distances(x):
-    '''
-    x: torch.Tensor, shape (n, d)
-    '''
+    """
+    Compute squared Euclidean distances between rows of x.
+
+    Args:
+        x: Tensor of shape (n, d)
+
+    Returns:
+        Tensor of shape (n, n) - distance matrix
+    """
     sum_x = torch.sum(x ** 2, dim=1, keepdim=True)
     return sum_x + sum_x.T - 2 * x @ x.T
 
 def high_dim_similarity(X, perplexity=30.0, tol=1e-5):
-    '''
-    X: torch.Tensor, shape (n, d)
-    perplexity: float
-    tol: float
-    '''
+    """
+    Compute high-dimensional pairwise similarities.
+
+    Args:
+        X: Input tensor (n, d)
+        perplexity: Effective neighborhood size
+        tol: Search tolerance
+
+    Returns:
+        P: Symmetric similarity matrix (n, n)
+    """
     D = pairwise_distances(X).cpu().numpy()
     X_np = X.detach().cpu().numpy()
     P, beta = adjustbeta(X_np, D, tol, perplexity)
@@ -149,9 +165,15 @@ def high_dim_similarity(X, perplexity=30.0, tol=1e-5):
     return torch.tensor(P, dtype=torch.float32, device=X.device)
 
 def compute_low_dim_similarities(Y):
-    '''
-    Y: torch.Tensor, shape (n, d)
-    '''
+    """
+    Compute low-dimensional similarities using t-distribution kernel.
+
+    Args:
+        Y: 2D embeddings (n, d)
+
+    Returns:
+        Q: Similarity matrix (n, n)
+    """
     N = Y.shape[0]
     D = pairwise_distances(Y)
     inv = (1.0 + D)**-1 #t distribution
@@ -160,22 +182,33 @@ def compute_low_dim_similarities(Y):
     return Q
 
 def kl_divergence(P, Q):
-    '''
-    P: torch.Tensor, shape (n, n)
-    Q: torch.Tensor, shape (n, n)
-    '''
+    """
+    Compute Kullback–Leibler divergence between P and Q.
+
+    Args:
+        P, Q: Probability matrices (n, n)
+
+    Returns:
+        Scalar loss value
+    """
     return torch.sum(P[P>0] * torch.log(P[P>0] / (Q[P>0]+1e-10)))
 
 def tsne(X,labels, n_components=2, perplexity=30.0, tol=1e-5, learning_rate=2.0, n_iter=1000):
-    '''
-    X: torch.Tensor, shape (n, d)
-    n_components: int
-    perplexity: float
-    tol: float
-    learning_rate: float
-    n_iter: int
-    batch_size: int
-    '''
+    """
+    Run t-SNE on input tensor X.
+
+    Args:
+        X: Input data (n, d)
+        labels: Corresponding labels (n,)
+        n_components: Target dimension (default: 2)
+        perplexity: Controls local/global trade-off
+        tol: Tolerance for beta search
+        learning_rate: Optimizer learning rate
+        n_iter: Number of optimization steps
+
+    Returns:
+        Numpy array of shape (n, n_components)
+    """
     if torch.cuda.is_available():
         device = torch.device("cuda")
     else:
@@ -212,10 +245,9 @@ if __name__ == "__main__":
     mnist = torchvision.datasets.MNIST(root='./data', train=True, download=True, transform=transform)
     data_loader = torch.utils.data.DataLoader(mnist, batch_size=1000, shuffle=True)
     images, labels = next(iter(data_loader))
-    print(images.shape)
     X_raw = images.view(images.shape[0], -1)
-    print(X_raw.shape)
     X_tensor = X_raw
+    # Run t-SNE
     save_metadata_tsv(labels)
     tsne(X_tensor, labels)
     print("t-SNE done")
