@@ -9,16 +9,9 @@ Both methods are applied to high-dimensional data like MNIST or single-cell data
 
 ---
 
-## Project Structure
-
-├── GraphDR/       # Graph-based smoothing + PCA (GraphDR)
- ├── tsne/          # Manual PyTorch implementation of t-SNE
- ├── .git/          # Git versioning
- └── README.md      # Project overview (this file)
-
 ## Submodules Overview
 
 | Module    | Description                                                  | Link                                     |
 | --------- | ------------------------------------------------------------ | ---------------------------------------- |
-| 🧠 GraphDR | Graph-based dimensionality reduction using Laplacian smoothing + PCA | [GraphDR/README.md](./GraphDR/README.md) |
+| 🧠 GraphDR | Graph-based dimensionality reduction using Laplacian smoothing + PCA | [GraphDR/README.md](./GraphDR/readme.md) |
 | 🔍 t-SNE   | From-scratch PyTorch implementation of t-SNE with TensorBoard support | [tsne/README.md](./tsne/README.md)       |
