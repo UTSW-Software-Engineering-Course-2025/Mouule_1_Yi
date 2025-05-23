@@ -1,0 +1,420 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Documentation &mdash; Yi&#39;s Module 1 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=d45e8c67"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            Yi's Module 1
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Project Documentation</a><ul>
+<li><a class="reference internal" href="#main-project-readme">Main Project README</a><ul>
+<li><a class="reference internal" href="#yi-s-module-1">Yi’s Module 1</a><ul>
+<li><a class="reference internal" href="#submodules-overview">Submodules Overview</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tsne-module">TSNE Module</a><ul>
+<li><a class="reference internal" href="#torch-t-sne-on-mnist">Torch t-SNE on MNIST</a><ul>
+<li><a class="reference internal" href="#features">Features</a></li>
+<li><a class="reference internal" href="#file-structure">File Structure</a><ul>
+<li><a class="reference internal" href="#run-the-script">Run the script</a></li>
+<li><a class="reference internal" href="#launch-tensorboard">Launch TensorBoard</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tsne.Hbeta"><code class="docutils literal notranslate"><span class="pre">Hbeta()</span></code></a></li>
+<li><a class="reference internal" href="#tsne.adjustbeta"><code class="docutils literal notranslate"><span class="pre">adjustbeta()</span></code></a></li>
+<li><a class="reference internal" href="#tsne.compute_low_dim_similarities"><code class="docutils literal notranslate"><span class="pre">compute_low_dim_similarities()</span></code></a></li>
+<li><a class="reference internal" href="#tsne.high_dim_similarity"><code class="docutils literal notranslate"><span class="pre">high_dim_similarity()</span></code></a></li>
+<li><a class="reference internal" href="#tsne.kl_divergence"><code class="docutils literal notranslate"><span class="pre">kl_divergence()</span></code></a></li>
+<li><a class="reference internal" href="#tsne.pairwise_distances"><code class="docutils literal notranslate"><span class="pre">pairwise_distances()</span></code></a></li>
+<li><a class="reference internal" href="#tsne.plot_tsne_scatter"><code class="docutils literal notranslate"><span class="pre">plot_tsne_scatter()</span></code></a></li>
+<li><a class="reference internal" href="#tsne.save_metadata_tsv"><code class="docutils literal notranslate"><span class="pre">save_metadata_tsv()</span></code></a></li>
+<li><a class="reference internal" href="#tsne.tsne"><code class="docutils literal notranslate"><span class="pre">tsne()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#graphdr-module">GraphDR Module</a><ul>
+<li><a class="reference internal" href="#graphdr-demonstration">GraphDR Demonstration</a><ul>
+<li><a class="reference internal" href="#whats-in-this-notebook">📘 What’s in This Notebook?</a></li>
+<li><a class="reference internal" href="#requirements">🔧 Requirements</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Yi's Module 1</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Project Documentation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="project-documentation">
+<h1>Project Documentation<a class="headerlink" href="#project-documentation" title="Link to this heading"></a></h1>
+<section id="main-project-readme">
+<h2>Main Project README<a class="headerlink" href="#main-project-readme" title="Link to this heading"></a></h2>
+<section id="yi-s-module-1">
+<h3>Yi’s Module 1<a class="headerlink" href="#yi-s-module-1" title="Link to this heading"></a></h3>
+<p>This repository demonstrates and compares two powerful dimensionality reduction methods implemented from scratch using Python:</p>
+<ul class="simple">
+<li><p>🔹 <strong>GraphDR</strong> – a linear graph-regularized smoother for structured embedding</p></li>
+<li><p>🔹 <strong>t-SNE</strong> – a non-linear, probabilistic method for manifold visualization</p></li>
+</ul>
+<p>Both methods are applied to high-dimensional data like MNIST or single-cell datasets to explore geometry and clustering in low dimensions.</p>
+<hr class="docutils" />
+<section id="submodules-overview">
+<h4>Submodules Overview<a class="headerlink" href="#submodules-overview" title="Link to this heading"></a></h4>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Module</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Link</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>🧠 GraphDR</p></td>
+<td><p>Graph-based dimensionality reduction using Laplacian smoothing + PCA</p></td>
+<td><p><a class="reference internal" href="#./GraphDR/readme.md"><span class="xref myst">GraphDR/README.md</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>🔍 t-SNE</p></td>
+<td><p>From-scratch PyTorch implementation of t-SNE with TensorBoard support</p></td>
+<td><p><a class="reference internal" href="#./tsne/README.md"><span class="xref myst">tsne/README.md</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="tsne-module">
+<h1>TSNE Module<a class="headerlink" href="#tsne-module" title="Link to this heading"></a></h1>
+<section id="torch-t-sne-on-mnist">
+<h2>Torch t-SNE on MNIST<a class="headerlink" href="#torch-t-sne-on-mnist" title="Link to this heading"></a></h2>
+<p>This project provides a clean, from-scratch implementation of t-SNE (t-Distributed Stochastic Neighbor Embedding) using <strong>PyTorch</strong>. It demonstrates how to reduce high-dimensional data (like MNIST images) into 2D for visualization purposes.</p>
+<section id="features">
+<h3>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Manual computation of pairwise distances and probability matrices (P and Q)</p></li>
+<li><p>Custom implementation of KL divergence as loss</p></li>
+<li><p>Optimization via PyTorch’s autograd and Adam optimizer</p></li>
+<li><p>TensorBoard integration for:</p>
+<ul>
+<li><p>Loss curves</p></li>
+<li><p>2D embedding visualization (projector tab)</p></li>
+</ul>
+</li>
+<li><p>Clean visualization of digit clusters in 2D</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="file-structure">
+<h3>File Structure<a class="headerlink" href="#file-structure" title="Link to this heading"></a></h3>
+<p>├── t-sne.py             # Main script
+├── tsne_mnist/                # TensorBoard logs and embeddings
+├── raw/                # Downloaded MNIST dataset
+└── README.md</p>
+<section id="run-the-script">
+<h4>Run the script<a class="headerlink" href="#run-the-script" title="Link to this heading"></a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>t-sne.py
+</pre></div>
+</div>
+<p>This will:</p>
+<ul class="simple">
+<li><p>Download the MNIST dataset</p></li>
+<li><p>Flatten the 28x28 images into 784-dimensional vectors</p></li>
+<li><p>Run t-SNE to embed them into 2D space</p></li>
+<li><p>Save TensorBoard visualizations</p></li>
+</ul>
+</section>
+<section id="launch-tensorboard">
+<h4>Launch TensorBoard<a class="headerlink" href="#launch-tensorboard" title="Link to this heading"></a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tensorboard<span class="w"> </span>--logdir<span class="o">=</span>runs/tsne_mnist
+</pre></div>
+</div>
+<p>Go to http://localhost:6006 to see:</p>
+<ul class="simple">
+<li><p>The KL divergence curve</p></li>
+<li><p>Embedding visualization under the <strong>“Projector”</strong> tab</p></li>
+</ul>
+</section>
+</section>
+</section>
+<dl class="py function" id="module-tsne">
+<dt class="sig sig-object py" id="tsne.Hbeta">
+<span class="sig-prename descclassname"><span class="pre">tsne.</span></span><span class="sig-name descname"><span class="pre">Hbeta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">D</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tsne.Hbeta" title="Link to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Compute entropy(H) and probability(P) from nxn distance matrix.</p>
+<dl class="simple">
+<dt>D<span class="classifier">numpy.ndarray</span></dt><dd><p>distance matrix (n,n)</p>
+</dd>
+<dt>beta<span class="classifier">float</span></dt><dd><p>precision measure</p>
+</dd>
+</dl>
+<div class="math notranslate nohighlight">
+\[eta =\]</div>
+</div></blockquote>
+<p>rac{1}/{(2 * sigma^2)}</p>
+<blockquote>
+<div><dl class="simple">
+<dt>H<span class="classifier">float</span></dt><dd><p>entropy</p>
+</dd>
+<dt>P<span class="classifier">numpy.ndarray</span></dt><dd><p>probability matrix (n,n)</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tsne.adjustbeta">
+<span class="sig-prename descclassname"><span class="pre">tsne.</span></span><span class="sig-name descname"><span class="pre">adjustbeta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">D</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">perplexity</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tsne.adjustbeta" title="Link to this definition"></a></dt>
+<dd><p>dichotomy search for the best beta
+Precision(beta) adjustment based on perplexity</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>numpy.ndarray</em>) – data input array with dimension (n,d)</p></li>
+<li><p><strong>tol</strong> (<em>float</em>) – tolerance for the stopping criteria of beta adjustment</p></li>
+<li><p><strong>perplexity</strong> (<em>float</em>) – perplexity can be interpreted as a smooth measure of the effective number of neighbors</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>P</strong> (<em>numpy.ndarray</em>) – probability matrix (n,n)</p></li>
+<li><p><strong>beta</strong> (<em>numpy.ndarray</em>) – precision array (n,1)</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tsne.compute_low_dim_similarities">
+<span class="sig-prename descclassname"><span class="pre">tsne.</span></span><span class="sig-name descname"><span class="pre">compute_low_dim_similarities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tsne.compute_low_dim_similarities" title="Link to this definition"></a></dt>
+<dd><p>Compute low-dimensional similarities using t-distribution kernel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Y</strong> – 2D embeddings (n, d)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Similarity matrix (n, n)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Q</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tsne.high_dim_similarity">
+<span class="sig-prename descclassname"><span class="pre">tsne.</span></span><span class="sig-name descname"><span class="pre">high_dim_similarity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">perplexity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tsne.high_dim_similarity" title="Link to this definition"></a></dt>
+<dd><p>Compute high-dimensional pairwise similarities.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> – Input tensor (n, d)</p></li>
+<li><p><strong>perplexity</strong> – Effective neighborhood size</p></li>
+<li><p><strong>tol</strong> – Search tolerance</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Symmetric similarity matrix (n, n)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>P</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tsne.kl_divergence">
+<span class="sig-prename descclassname"><span class="pre">tsne.</span></span><span class="sig-name descname"><span class="pre">kl_divergence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">P</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Q</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tsne.kl_divergence" title="Link to this definition"></a></dt>
+<dd><p>Compute Kullback–Leibler divergence between P and Q.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>P</strong> – Probability matrices (n, n)</p></li>
+<li><p><strong>Q</strong> – Probability matrices (n, n)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Scalar loss value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tsne.pairwise_distances">
+<span class="sig-prename descclassname"><span class="pre">tsne.</span></span><span class="sig-name descname"><span class="pre">pairwise_distances</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tsne.pairwise_distances" title="Link to this definition"></a></dt>
+<dd><p>Compute squared Euclidean distances between rows of x.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> – Tensor of shape (n, d)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tensor of shape (n, n) - distance matrix</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tsne.plot_tsne_scatter">
+<span class="sig-prename descclassname"><span class="pre">tsne.</span></span><span class="sig-name descname"><span class="pre">plot_tsne_scatter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tsne.plot_tsne_scatter" title="Link to this definition"></a></dt>
+<dd><p>Plot a 2D scatter plot for t-SNE embeddings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Y</strong> – ndarray or Tensor of shape (N, 2) - 2D embeddings</p></li>
+<li><p><strong>labels</strong> – ndarray or Tensor of shape (N,) - class labels</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tsne.save_metadata_tsv">
+<span class="sig-prename descclassname"><span class="pre">tsne.</span></span><span class="sig-name descname"><span class="pre">save_metadata_tsv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runs/tsne_mnist/metadata.tsv'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tsne.save_metadata_tsv" title="Link to this definition"></a></dt>
+<dd><p>generate a tsv file to match the color and label</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tsne.tsne">
+<span class="sig-prename descclassname"><span class="pre">tsne.</span></span><span class="sig-name descname"><span class="pre">tsne</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_components</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">perplexity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tsne.tsne" title="Link to this definition"></a></dt>
+<dd><p>Run t-SNE on input tensor X.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> – Input data (n, d)</p></li>
+<li><p><strong>labels</strong> – Corresponding labels (n,)</p></li>
+<li><p><strong>n_components</strong> – Target dimension (default: 2)</p></li>
+<li><p><strong>perplexity</strong> – Controls local/global trade-off</p></li>
+<li><p><strong>tol</strong> – Tolerance for beta search</p></li>
+<li><p><strong>learning_rate</strong> – Optimizer learning rate</p></li>
+<li><p><strong>n_iter</strong> – Number of optimization steps</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Numpy array of shape (n, n_components)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<hr class="docutils" />
+<section id="graphdr-module">
+<h1>GraphDR Module<a class="headerlink" href="#graphdr-module" title="Link to this heading"></a></h1>
+<section id="graphdr-demonstration">
+<h2>GraphDR Demonstration<a class="headerlink" href="#graphdr-demonstration" title="Link to this heading"></a></h2>
+<p>This repository contains a demonstration of the <strong>GraphDR</strong> algorithm, a linearized graph-based dimensionality reduction technique designed for structure-preserving visualization of high-dimensional data such as single-cell RNA sequencing (scRNA-seq).</p>
+<p>GraphDR blends the strengths of PCA and graph smoothing into a unified framework for denoising and dimensionality reduction.</p>
+<hr class="docutils" />
+<section id="whats-in-this-notebook">
+<h3>📘 What’s in This Notebook?<a class="headerlink" href="#whats-in-this-notebook" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">GraphDR_test.ipynb</span></code> notebook includes:</p>
+<ul class="simple">
+<li><p>Construction of a k-NN graph from input data</p></li>
+<li><p>Graph smoothing via linear system solving</p></li>
+<li><p>Dimensionality reduction via PCA</p></li>
+<li><p>Visualization of smoothed data</p></li>
+<li><p>Example with MNIST or toy data (depending on your dataset)</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="requirements">
+<h3>🔧 Requirements<a class="headerlink" href="#requirements" title="Link to this heading"></a></h3>
+<p>You can install the dependencies using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"> </span>scipy<span class="w"> </span>scikit-learn<span class="w"> </span>matplotlib
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Yi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
